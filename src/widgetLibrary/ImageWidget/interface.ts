@@ -1,0 +1,16 @@
+import { ImageProps } from "~/packages/components"
+import { TooltipWrapperProps } from "~/widgetLibrary/PublicSector/TooltipWrapper/interface"
+import { BaseWidgetProps } from "~/widgetLibrary/interface"
+
+export interface WrappedImageProps
+  extends Pick<ImageProps, "width" | "height" | "radius"> {
+  imageSrc?: ImageProps["src"]
+  altText?: ImageProps["alt"]
+  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down"
+  handleOnClick: () => void
+}
+
+export interface ImageWidgetProps
+  extends WrappedImageProps,
+    BaseWidgetProps,
+    TooltipWrapperProps {}
